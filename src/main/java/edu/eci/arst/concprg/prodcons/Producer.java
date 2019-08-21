@@ -31,11 +31,15 @@ public class Producer extends Thread {
     @Override
     public void run() {
         while (true) {
-            if ( queue.size()<stockLimit) {
+            //if ( queue.size()<stockLimit) {
                 dataSeed = dataSeed + rand.nextInt(100);
                 System.out.println("Producer added " + dataSeed);
-                queue.add(dataSeed);
-            } else {
+                synchronized(queue){
+                    queue.add(dataSeed);
+                    queue.notify();
+                }
+                
+            /*} else {
                 synchronized (this) {
                     try {
                         this.wait();
@@ -43,13 +47,13 @@ public class Producer extends Thread {
                         Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-            }
-            /*try {
+            }*/
+            try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
             }
-             */
+             
         }
     }
 }

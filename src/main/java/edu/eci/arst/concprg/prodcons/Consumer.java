@@ -6,6 +6,8 @@
 package edu.eci.arst.concprg.prodcons;
 
 import java.util.Queue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,10 +25,17 @@ public class Consumer extends Thread{
     @Override
     public void run() {
         while (true) {
-
+            synchronized(queue){
             if (queue.size() > 0) {
                 int elem=queue.poll();
                 System.out.println("Consumer consumes "+elem);                                
+            } else{
+                try {
+                    queue.wait();
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Consumer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             }
             
         }
