@@ -28,7 +28,12 @@
   * **3.** Each player permanently attacks some other immortal. The one who first attacks subtracts M life points from his opponent, and increases his own life points by the same amount. 
   * **4.** The game could never have a single winner. Most likely, in the end there are only two left, fighting indefinitely by removing and adding life points. 
 * ***2.*** Review the code and identify how the functionality indicated above was implemented. Given the intention of the game, an invariant should be that the sum of the life points of all players is always the same (of course, in an instant of time in which a time increase / reduction operation is not in process ). For this case, for N players, what should this value be?
+
+   `the value should be N*lifePoints of the immortals`
+
 * ***3.*** Run the application and verify how the ‘pause and check’ option works. Is the invariant fulfilled?
+
+    the invariant isn´t satisfied the value .
 * ***4.*** A first hypothesis that the race condition for this function (pause and check) is presented is that the program consults the list whose values ​​it will print, while other threads modify their values. To correct this, do whatever is necessary so that, before printing the current results, all other threads are paused. Additionally, implement the ‘resume’ option.
 * ***5.*** Check the operation again (click the button many times). Is the invariant fulfilled or not ?.
 * ***6.*** Identify possible critical regions in regards to the fight of the immortals. Implement a blocking strategy that avoids race conditions. Remember that if you need to use two or more ‘locks’ simultaneously, you can use nested synchronized blocks:
