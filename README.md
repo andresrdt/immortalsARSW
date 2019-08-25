@@ -29,16 +29,27 @@
   * **4.** The game could never have a single winner. Most likely, in the end there are only two left, fighting indefinitely by removing and adding life points. 
 * ***2.*** Review the code and identify how the functionality indicated above was implemented. Given the intention of the game, an invariant should be that the sum of the life points of all players is always the same (of course, in an instant of time in which a time increase / reduction operation is not in process ). For this case, for N players, what should this value be?
 #
-   `the value should be N*lifePoints of the immortals.`
+    ` the value should be N*lifePoints of the immortals.`
 #
 * ***3.*** Run the application and verify how the ‘pause and check’ option works. Is the invariant fulfilled?
 #
 ![](img/suma.PNG)
 ![](img/suma1.PNG)
 ![](img/suma2.PNG)
-    ` the pause and check button apparently shows in the moment it's clicked the lifepoints sumatory. Also we observed that in the execution the invariant is not fulfilled .`
+    ` the pause and check button apparently shows in the moment it's clicked the lifepoints sumatory. Also we observed that in the             execution the invariant is not fulfilled .`
 #    
 * ***4.*** A first hypothesis that the race condition for this function (pause and check) is presented is that the program consults the list whose values ​​it will print, while other threads modify their values. To correct this, do whatever is necessary so that, before printing the current results, all other threads are paused. Additionally, implement the ‘resume’ option.
+#
+    `We solved the pause and resume problem adding a boolean variable to the thread, this allowed us to whenever the pause or resume          button is clicked the execution of the thread stops and can be resume it easely `
+ ![](img/pausa.PNG)
+ ![](img/pausa1.PNG)
+ ![](img/pausa2.PNG)
+ ---
+ ![](img/resume.PNG)
+ ![](img/resume1.PNG)
+ 
+#
+
 * ***5.*** Check the operation again (click the button many times). Is the invariant fulfilled or not ?.
 * ***6.*** Identify possible critical regions in regards to the fight of the immortals. Implement a blocking strategy that avoids race conditions. Remember that if you need to use two or more ‘locks’ simultaneously, you can use nested synchronized blocks:
 * ***7.*** After implementing your strategy, start running your program, and pay attention to whether it comes to a halt. If so, use the jps and jstack programs to identify why the program stopped.
