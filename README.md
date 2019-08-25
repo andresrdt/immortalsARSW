@@ -36,11 +36,14 @@
 ![](img/suma.PNG)
 ![](img/suma1.PNG)
 ![](img/suma2.PNG)
-    ` the pause and check button apparently shows in the moment it's clicked the lifepoints sumatory. Also we observed that in the             execution the invariant is not fulfilled .`
+
+    `the pause and check button apparently shows in the moment it's clicked the lifepoints sumatory.
+    Also we observed that in the execution the invariant is not fulfilled.`
 #    
 * ***4.*** A first hypothesis that the race condition for this function (pause and check) is presented is that the program consults the list whose values ​​it will print, while other threads modify their values. To correct this, do whatever is necessary so that, before printing the current results, all other threads are paused. Additionally, implement the ‘resume’ option.
 #
-    `We solved the pause and resume problem adding a boolean variable to the thread, this allowed us to whenever the pause or resume          button is clicked the execution of the thread stops and can be resume it easely `
+    `We solved the pause and resume problem adding a boolean variable to the thread, this allowed us to 
+    whenever the pause or resume button is clicked the execution of the thread stops and can be resume it easely `
  ![](img/pausa.PNG)
  ![](img/pausa1.PNG)
  ![](img/pausa2.PNG)
