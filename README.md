@@ -66,7 +66,7 @@
 * ***7.*** After implementing your strategy, start running your program, and pay attention to whether it comes to a halt. If so, use the jps and jstack programs to identify why the program stopped.
 * ***8.*** Consider a strategy to correct the problem identified above (you can review Chapter 15 of Java Concurrency in Practice again).
 #
-    `we solved two solutions.First, if the immortal is 'dead', he can't revive. The secont solucion is syncronized the list of        the immortals in order to prevent that the total life of the immortals change in the execution.`
+    `we solved two solutions.First, if the immortal is 'dead', he can't revive. The secont solucion is syncronized the list of the immortals in order to prevent that the total life of the immortals change in the execution.`
 ![](img/fightCode.PNG)
 
 #
