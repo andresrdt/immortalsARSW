@@ -58,9 +58,19 @@
     `No, the health sumatory keeps changing incorrectly.`
   
 * ***6.*** Identify possible critical regions in regards to the fight of the immortals. Implement a blocking strategy that avoids race conditions. Remember that if you need to use two or more ‘locks’ simultaneously, you can use nested synchronized blocks:
+#
+    `The critical is the method fight() in immortal class.`
+
+#
 
 * ***7.*** After implementing your strategy, start running your program, and pay attention to whether it comes to a halt. If so, use the jps and jstack programs to identify why the program stopped.
 * ***8.*** Consider a strategy to correct the problem identified above (you can review Chapter 15 of Java Concurrency in Practice again).
+#
+    `we solved two solutions.First, if the immortal is 'dead', he can't revive. The secont solucion is syncronized the list of        the immortals in order to prevent that the total life of the immortals change in the execution.`
+![](img/fightCode.PNG)
+
+#
+
 * ***9.*** Once the problem is corrected, rectify that the program continues to function consistently when 100, 1000 or 10000 immortals are executed. If in these large cases the invariant begins to be breached again, you must analyze what was done in step 4.
 * ***10.*** An annoying element for the simulation is that at a certain point in it there are few living 'immortals' making failed fights with 'immortals' already dead. It is necessary to suppress the immortal dead of the simulation as they die. 
 
