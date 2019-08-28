@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JScrollBar;
 
 public class ControlFrame extends JFrame {
@@ -128,6 +130,16 @@ public class ControlFrame extends JFrame {
 
         JButton btnStop = new JButton("STOP");
         btnStop.setForeground(Color.RED);
+        btnStop.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    this.finalize();
+                } catch (Throwable ex) {
+                    Logger.getLogger(ControlFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        });
         toolBar.add(btnStop);
 
         scrollPane = new JScrollPane();
