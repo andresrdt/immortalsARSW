@@ -77,7 +77,9 @@
   * ***1.*** Analyzing the simulation operation scheme, could this create a race condition? Implement the functionality, run the simulation and see what problem arises when there are many 'immortals' in it. Write your conclusions about it in the file ANSWERS.txt. 
   * ***2.*** Correct the previous problem WITHOUT using synchronization, since making access to the shared list of immortals sequential would make simulation extremely slow.
    ![](img/decimo.PNG)
+   
 * ***11.*** To finish, implement the STOP option.
+
   ![](img/stop.PNG)
 
 ---
