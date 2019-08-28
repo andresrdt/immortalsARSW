@@ -55,9 +55,9 @@ public class Immortal extends Thread {
             }
 
             im = immortalsPopulation.get(nextFighterIndex);
-
+            if (!im.isDead  && im.health>=0){
             this.fight(im);
-                
+            }
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {

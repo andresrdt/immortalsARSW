@@ -132,12 +132,9 @@ public class ControlFrame extends JFrame {
         btnStop.setForeground(Color.RED);
         btnStop.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                try {
-                    this.finalize();
-                } catch (Throwable ex) {
-                    Logger.getLogger(ControlFrame.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
+                btnPauseAndCheck.doClick();
+                btnStart.setEnabled(true);
+                immortals=new LinkedList<Immortal>();
             }
         });
         toolBar.add(btnStop);
