@@ -1,4 +1,8 @@
 # immortalsARSW
+
+# Autores:
+* Andres Rodriguez del toro
+* Nicolas Patiño
 ---
 # part 1 - before finishing class
 
